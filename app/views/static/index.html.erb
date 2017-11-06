@@ -7,10 +7,39 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
 non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+<h2>Students</h2>
 <ul>
 <% @students.each do |student| %>
   <%= link_to student do %>
     <li><%= student.name %> <%= student.index %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<h2>Courses</h2>
+<ul>
+<% @courses.each do |course| %>
+  <%= link_to course do %>
+    <li><%= course.name %> <%= course.code %> <%= course.description %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<h2>Topics</h2>
+<ul>
+<% @topics.each do |topic| %>
+  <%= link_to topic do %>
+    <li><%= topic.title %> <%= topic.student %> <%= topic.course %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<h2>Posts</h2>
+<ul>
+<% @posts.each do |post| %>
+  <%= link_to post do %>
+    <li><%= post.body %> <%= post.student %> <%= post.topic %></li>
   <% end %>
 <% end %>
 </ul>
